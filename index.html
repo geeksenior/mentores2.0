@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentores da Inovação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            position: relative;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+         .led-text {
+            text-shadow: 0 0 10px #00a2ff, 0 0 20px #00a2ff, 0 0 30px #00a2ff;
+            animation: flicker 2s infinite alternate;
+        }
+           .video-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        
+        
+        .video {
+            max-width: 50%;
+            max-height: 50%;
+        }
+        
+        /* Espaçador para garantir que haja scroll antes do vídeo */
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="img/Design_sem_nome-removebg-preview 1 (1).png" alt="logomarca">
+                  </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-indigo-600 font-medium">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-indigo-600 font-medium">Sobre</a>
+                    <a href="#competências" class="text-gray-700 hover:text-indigo-600 font-medium">Chatbot Genio</a>
+                    <a href="#instruções" class="text-gray-700 hover:text-indigo-600 font-medium">Instruções Do Chatbot</a>
+                    <a href="#especialidades" class="text-gray-700 hover:text-indigo-600 font-medium">Especialidades Do Chatbot</a>
+                    <a href="#projetos" class="text-gray-700 hover:text-indigo-600 font-medium">Galeria De Projetos</a>
+                </nav>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+<style>
+.blue {
+    background-color: blue; /* Azul sólido */
+    color: white; /* Texto branco */
+}
+</style>
+
+    <!-- Hero Section with Carousel -->
+    <section id="inicio" class="relative overflow-hidden">
+        <div class="carousel-container relative h-screen">
+            <!-- Carousel Item 1 -->
+            <div class="carousel-item active bg-gradient-to-r from-blue-50 to-indigo-50 h-full flex items-center">
+                <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                           Seja Bem-Vindo <span class="gradient-text">Ao Projeto Integrador da Turma Técnico Em Administração 2024.26.296 Do Senac Fecomércio</span> 
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8">
+                            É novo por aqui? Conheça nosso padlet!😁</p>
+                       <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://padlet.com/tecadm202426296/projeto-saber-corporativo-mentores-da-inova-o-wo4mo8i1jl3s36t2" target="_blank" class="blue neon-btn px-6 py-3 rounded-lg text-center font-medium">
+                            Acessar O Padlet
+                        </a>
+                    </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="img/turma.PNG"
+                             alt="Mentoria" 
+                             class="rounded-xl shadow-2xl max-w-md w-full floating">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Item 2 -->
+            <div class="carousel-item bg-gradient-to-r from-indigo-50 to-purple-50 h-full flex items-center">
+                <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                             Conheça <span class="gradient-text">O Chatbot Genio</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8">
+                         Genio é um chatbot que está aqui para te ajudar na compreensão dos assuntos do projeto
+                        </p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <div class="flex flex-wrap gap-4">
+                           <button id="openChatBtn" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 transition shadow-lg">
+                            <i class="fas fa-comment-dots"></i>
+                        </button>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="img/V-deo-de-Rob-Boas-Vindas-unscreen.gif" alt="boas vindas">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Item 3 -->
+             <div class="carousel-item bg-gradient-to-r from-purple-50 to-blue-50 h-full flex items-center">
+                <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                            <span class="gradient-text">Conheça <span class="gradient-text">A Inteligência Artificial Dos Mentores Da Inovação </span> 
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Conheça a inteligência artificial do projeto e veja como ela resolve questões administrativas em poucos segundos
+                        </p>
+                        <a href="https://jocular-creponne-417cf0.netlify.app/" target="_blank" class="blue neon-btn px-6 py-3 rounded-lg text-center font-medium">
+                        Acessar A Inteligência Artificial 
+                        </a>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="img/ChatGPT Image 26 de set. de 2025, 21_01_05.png" 
+                             alt="Aprendizado" 
+                             class="rounded-xl shadow-2xl max-w-md w-full floating"> 
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-3">
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-600 transition duration-300" data-slide-to="0"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-600 transition duration-300" data-slide-to="1"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-600 transition duration-300" data-slide-to="2"></button>
+            </div>
+        </div>
+    </section>
+    <!-- Project Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Sobre o <span class="gradient-text">Projeto</h2></span>
+                    <div class="w-20 h-1 bg-indigo-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+          Desenvolvida pela turma de técnico em Administração da instituição Senac Fecomércio Bahia, o projeto integrador Mentores da Inovação nasceu com a necessidade de compreender 
+        como os processos administrativos estão sendo influenciados pela inteligência artificial através de sua eficiência e operacionalização.     
+                        <p class="text-gray-600 mb-6">
+                            Por meio disso, o projeto foi distribuído em ações para auxílio do entendimento do assunto:  
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Sessões individuais com especialistas da área de administração e tecnologia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Workshops temáticos </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Rodas de conversas </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Podcast</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                 <video class="video"id="autoplay-video" width="1000" height="1000" controls>
+                  <source src="Video/Primeira Chamada Mentores da Inovação.mp4" type="video/mp4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Section -->
+    <section id="competências" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Quer saber quais são as áreas de estudo que o Projeto Integrador do Senac engloba? Pergunte<span class="gradient-text"> ao chatbot GENIO (Gestão Estratégica de Novas Ideias e Oportunidades) </span></h2>
+                    <div class="w-20 h-1 bg-indigo-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+         O chatbot GENIO (Gestão Estratégica de Novas Ideias e Oportunidades) foi desenvolvido para trazer informações sobre as competências que a turma de técnico em administração adquiriu no decorrer do curso.  
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                             Para que isso seja possível, o usuário deve fazer perguntas relacionadas ás unidades curriculares do curso, para que assim possa ser mostrado as competências que a turma adquiriu ao decorrer da sua jornada.  
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-700">Confira as instruções logo abaixo para iniciar.</span>
+                        </li>
+                        <li class="flex items-start">
+                        <span class="text-gray-700"> Desde já, a turma agradece pela sua colaboração no projeto.</span>
+                          <span class="text-gray-700"></span>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="text-gray-700"> Faça um bom uso do chat!</span>
+                        </li>
+                    </ul>
+                </div>
+                   <div class="video-container">
+                   </div>
+               <video class="video"id="autoplay-video" width="1000" height="1000" controls>
+               <source src="Video/Vídeo_de_Robô_Boas_Vindas.mp4" type="video/mp4">
+             </div>
+            </div>
+        </div>
+    </section>
+       
+     <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Instruções <span class="gradient-text">Do Chatbot</span></h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+               É estritamente importante que leia com atenção as orientações que o chatbot irá fornecer, para que assim ele possa responder de maneira assertiva e precisa.
+            </p>
+        </section>
+
+        <!-- Instructions Section -->
+        <section id="instruções" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-comment-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Iniciando a Conversa </h3>
+                    </div>
+                    <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                        <li>Primeiro passo é clicar na seção de chatbot do site ou no ícone roxo no canto inferior direito da tela</li>
+                        <li>O chatbot será iniciado e dará todas as instruções necessárias para tirar suas dúvidas. Lembrando que é recomendado ler atentamente as instruções antes de continuar a conversa.</li>
+                        <li>Digite o comando “combinado” ao ler as instruções. </li>
+                        <li>Em seguida, o chatbot te pedirá para confirmar se realmente leu as instruções, então digite “ok” </li>
+                        <li>Por fim, o chatbot apresentará as opções das Unidades Curriculares (UC’s) do curso e, de acordo com a escolha do usuário, exibirá um breve resumo sobre como a inteligência artificial vem transformando cada área de atuação.</li>
+                    </ol>
+                </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-8">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-exclamation-triangle text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Limitações Importantes</h3>
+                </div>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>O chatbot não substitui o atendimento humano para casos complexos</li>
+                    <li>É extremamente importante que não sejam feitas perguntas fora do contexto do projeto</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
+        <section id="especialidades"><main class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Especialidades <span class="gradient-text">do Chatbot</span></h2><div class="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">Conheça nossas áreas de atuação e descubra como o chat pode ajudar</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- UC1 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-chess text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC1</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a elaboração, implementação e acompanhamento do planejamento estratégico das organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-blue-600 font-medium">Estratégia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC2 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 text-green-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-file-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC2</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Elaborar, organizar e controlar documentos da organização</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-green-600 font-medium">Documentação</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC3 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 text-purple-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-project-diagram text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC3</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a estruturação e operacionalização de projetos</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-purple-600 font-medium">Gestão de Projetos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC4 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 text-yellow-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-user-plus text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC4</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a execução dos procedimentos de recrutamento, seleção e integração de pessoas</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-yellow-600 font-medium">Recrutamento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC5 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC5</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Apoiar e executar ações pertinentes a desenvolvimento de pessoas, retenção, avaliação de desempenho e elaboração de planos de cargos e salário</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-red-600 font-medium">Desenvolvimento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC6 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-heartbeat text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC6</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Atuar na organização e execução de ações relacionadas à qualidade de vida, saúde e segurança nos ambientes de trabalho</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-indigo-600 font-medium">Qualidade de Vida</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC7 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-100 text-pink-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-exchange-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC7</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Apoiar e executar ações referentes às rotinas de admissão e demissão de colaboradores</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-pink-600 font-medium">Rotinas RH</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC8 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-teal-100 text-teal-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-money-bill-wave text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC8</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a elaboração da folha de pagamento</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-teal-600 font-medium">Folha de Pagamento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC9 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-100 text-orange-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-boxes text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC9</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a execução das ações pertinentes aos processos de gestão de materiais e patrimônio em organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-orange-600 font-medium">Gestão de Materiais</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC10 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-100 text-orange-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-truck text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC10</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a execução de atividades relacionadas às operações logísticas em organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-orange-600 font-medium">Logística</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC11 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 text-yellow-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-coins text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC11</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar a execução das ações pertinentes aos processos financeiros em organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-yellow-600 font-medium">Finanças</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC12 -->
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 text-yellow-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-pie text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC12</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar as operações pertinentes às atividades da controladoria nas organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-yellow-600 font-medium">Finanças</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 text-purple-800 p-3 rounded-full mr-4">
+                            <i class="fa-solid fa-comments-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC13</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Auxiliar o planejamento, desenvolvimento e a aplicação do composto de marketing das organizações</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-purple-600 font-medium">Marketing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-800 p-3 rounded-full mr-4">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC14</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Executar atividades de apoio administrativo em processos comerciais</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-red-600 font-medium">Comércio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-800 p-3 rounded-full mr-4">
+                           <i class="fa-solid fa-comment-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC15</h3>
+                    </div>
+                    <p class="text-gray-500 mb-4">Apoiar a operacionalização de ações de comércio exterior</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-red-600 font-medium">Comércio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-800 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-pie text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC16</h3>
+                    </div>
+                    <p class="text-gray-500 mb-4">Auxiliar o planejamento e a execução de melhorias dos processos organizacionais</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-indigo-600 font-medium">Processos Organizacionais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specialty-card bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-teal-100 text-teal-800 p-3 rounded-full mr-4">
+                        <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">UC17</h3>
+                    </div>
+                    <p class="text-gray-500 mb-4">Projeto integrador da turma técnico em administração</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-teal-600 font-medium">Projeto Integrador</span>
+                    </div>
+                </div>
+            </div>
+           </div>
+            </div>
+                </div>
+            </div>
+                    </div>
+                </div>
+
+  <style>
+        .specialty-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .empty-specialty {
+            background: repeating-linear-gradient(
+                45deg,
+                #f3f4f6,
+                #f3f4f6 10px,
+                #e5e7eb 10px,
+                #e5e7eb 20px
+            );
+        }
+    </style>
+    
+    <script>
+        // Simple animation for specialty cards when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const cards = document.querySelectorAll('.specialty-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+            
+    <body class="bg-gray-50 font-sans">
+        <!-- Header/Navigation -->
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-indigo-600 bg-clip-text text-transparent"></h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                </nav>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 z-0"></div>
+            <div class="container mx-auto px-4 py-20 md:py-32 relative z-10 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 inline-flex items-center mb-6 shadow-sm">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        <span class="text-sm font-medium text-gray-700">Chatbot Disponível Agora</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button id="openChatBtn" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 transition shadow-lg">
+                            <i class="fas fa-comment-dots"></i>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                        </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative floating">
+                        <div class="chat-container bg-white rounded-2xl w-full max-w-md overflow-hidden border border-gray-200">
+                            <div class="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 flex items-center">
+                                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                                    <img src="img/ChatGPT Image 23 de jul. de 2025, 01_08_56 1.png" alt="robozinho">
+                                </div>
+                                <h3 class="text-white font-medium">Chatbot Genio</h3>
+                                <div class="ml-auto flex space-x-2">
+                                    <div class="w-2 h-2 bg-white/70 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-white/70 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-white/70 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 h-64 overflow-y-auto bg-gray-50">
+                                <div class="flex mb-4">
+                                    <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-xs">
+                                        <p class="text-gray-700">Olá!, sou o chatbot (GENIO) Como posso te ajudar hoje? </p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end mb-4">
+                                    <div class="bg-purple-500 text-white p-3 rounded-lg rounded-tr-none shadow-sm max-w-xs">
+                                        <p>O que pode me dizer sobre o projeto mentores da inovação?</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-xs">
+                                        <p class="text-gray-700">Posso te dizer que é o projeto integrador da turma técnico do curso de administração 2024.26.296, que vai mudar para sempre o mundo da administração e esse projeto está imperdível!</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end mb-4">
+                                    <div class="bg-purple-500 text-white p-3 rounded-lg rounded-tr-none shadow-sm max-w-xs">
+                                        <p>Isso é incrível!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 border-t border-gray-200 bg-white">
+                                <div class="relative">
+                                    <input type="text" placeholder="Digite sua mensagem..." class="w-full pl-4 pr-12 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-gradient-to-r from-purple-500 to-indigo-600 p-3 rounded-full shadow-xl">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <!-- Projects Section -->
+    <section id="projetos" class="py-20 bg-gray-50">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+        .project-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .project-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos <span class="gradient-text">Projetos Inovadores</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Explore a galeria de projetos que estão moldando o futuro através da tecnologia e criatividade.
+            </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-blue-50 transition-all active" data-filter="trabalhos">
+                <i class="fas fa-user mr-2"></i>Trabalhos Individuais e Inovações
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-blue-50 transition-all" data-filter="games">
+                <i class="fas fa-gamepad mr-2"></i>Games e Tecnologias
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-blue-50 transition-all" data-filter="workshops">
+                <i class="fas fa-comments mr-2"></i>Workshops e Rodas de Conversas
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-blue-50 transition-all" data-filter="podcast">
+                <i class="fas fa-podcast mr-2"></i>Podcast
+            </button>
+        </div>
+
+        <!-- Galeria -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+            <!-- Projeto 1 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="games">
+                <div class="relative h-64">
+                    <img src="img/unnamed.png" alt="games" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Dia 26.09 Dia dos surdos</h3>
+                        <p class="text-gray-200 mb-4">Em comemoração ao dia dos surdos 26.08, foi feito um game interativo que ensina conceitos da linguagem de libras.</p>
+                        <div class="flex space-x-2">
+                            <a href="Surdos/index.html" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar jogo</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Games e Tecnologias: Jogo Educacional Para Surdos</h3>
+                            <p class="text-gray-600">Quiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="trabalhos">
+                <div class="relative h-64">
+                    <img src="img/Análise.png" alt="analise" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Análise de currículo inteligente com IA</h3>
+                        <p class="text-gray-200 mb-4">Plataforma desenvolvida pelos mentores da inovação com o intuito de facilitar a análise de currículo do candidato</p>
+                        <div class="flex space-x-2">
+                            <a href="https://mentores-da-inovacao-4c8eadb2.base44.app/" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar plataforma</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Inovação : Plataforma de análise de currículo com IA</h3>
+                            <p class="text-gray-600">Análise Rápida e Assertiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="trabalhos">
+                <div class="relative h-64">
+                    <img src="img/ChatGPT Image 10 de out. de 2025, 22_15_57.png" alt="analise" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Análise financeira inteligente com IA</h3>
+                        <p class="text-gray-200 mb-4">Plataforma desenvolvida pelos mentores da inovação com o intuito de facilitar a organização do financeiro de uma organização</p>
+                        <div class="flex space-x-2">
+                            <a href="https://mentores-da-inovacao-7b640f59.base44.app/Dashboard" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar plataforma</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Inovação : Plataforma de análise financeira com IA</h3>
+                            <p class="text-gray-600">Análise Rápida e Assertiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="trabalhos">
+                <div class="relative h-64">
+                    <img src="img/ChatGPT Image 11 de out. de 2025, 21_40_42.png" alt="analise" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Análise de campanhas de marketing com IA</h3>
+                        <p class="text-gray-200 mb-4">Plataforma desenvolvida pelos mentores da inovação com o intuito de facilitar as campanhas de marketing de uma organização</p>
+                        <div class="flex space-x-2">
+                            <a href="https://ad-sight-ai-copy-c702e543.base44.app/" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar plataforma</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Inovação : Conheça a plataforma de análise de campanhas de marketing com ia.</h3>
+                            <p class="text-gray-600">Análise Rápida e Assertiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="trabalhos">
+                <div class="relative h-64">
+                    <img src="img/ChatGPT Image 10 de out. de 2025, 22_47_22.png" alt="analise" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Análise de materias de estoque inteligente com IA</h3>
+                        <p class="text-gray-200 mb-4">Plataforma desenvolvida pelos mentores da inovação com o intuito de facilitar a organização de materiais de estoque na organização</p>
+                        <div class="flex space-x-2">
+                            <a href="https://estoque-mentor.lovable.app/?utm_source=lovable-editor" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar plataforma</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Inovação : Plataforma de análise de materiais de estoque com IA</h3>
+                            <p class="text-gray-600">Análise Rápida e Assertiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="games">
+                <div class="relative h-64">
+                    <img src="img/Captura de tela 2025-10-09 001518.png" alt="games" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Desafio da IA quiz</h3>
+                        <p class="text-gray-200 mb-4">Quiz feito com intuito de mostrar quais são as plataformas de inteligência artificial existentes</p>
+                        <div class="flex space-x-2">
+                            <a href="https://padlet.com/wanessaalunasenac2024/quiz-intelig-ncia-artificial-mselfo4io5zn9bu3" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar jogo</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Games e Tecnologias : Quiz sobre inteligência articial </h3>
+                            <p class="text-gray-600">Quiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Projeto 2 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="games">
+                <div class="relative h-64">
+                    <img src="img/626af17e37014a34e98e8b02_robô IA.png" alt="games" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Jogo sobre as inteligências artificiais</h3>
+                        <p class="text-gray-200 mb-4">Jogo de perguntas e respostas sobre os tipos de inteligências artificiais no cotidiano</p>
+                        <div class="flex space-x-2">
+                            <a href="https://clever-parfait-c508b0.netlify.app/" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar jogo</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Games e Tecnologias: Jogo Informativo Sobre Inteligência Artificial</h3>
+                             <p class="text-gray-600">Quiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- Projeto 3 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="workshops" style="animation-delay: 0.1s;">
+                <div class="relative h-64">
+                    <img src="img/linkedin-ha-empezado-utilizar-datos-usuarios-entrenar-ia-avisarles-4204990.webp" alt="Trabalho Individual" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Jogo de perguntas e respostas do workshop</h3>
+                        <p class="text-gray-200 mb-4">Jogo de perguntas sobre inteligência artificial e linkedin, e como relacioná-los</p>
+                        <div class="flex space-x-2">
+                        <a href="https://euphonious-ganache-9039ba.netlify.app/" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar jogo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Quiz do Workshop </h3>
+                             <p class="text-gray-600">Quiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Projeto 2 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="trabalhos" style="animation-delay: 0.1s;">
+                <div class="relative h-64">
+                    <img src="img/cartilha.PNG" alt="Trabalho Individual" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Cartilha Informativa De Recursos Humanos</h3>
+                        <p class="text-gray-200 mb-4">Cartilha desenvolvida pela Turma Técnico 2024.26.296 Em Administração Do Senac Fecomércio, com intuito de informar sobre a importância dos recursos humanos</p>
+                        <div class="flex space-x-2">
+                        <a href="https://padlet.com/pedro55089236/calend-rio-do-plano-de-a-o-oxly1o6k26fwjuuh/wish/AL83WzDE6qMOQ0Pg" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar A Cartilha</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900"> Trabalho Individual : Cartilha Informativa De Recursos Humanos </h3>
+                            <p class="text-gray-600"> Cartilha informativa elaborada para auxiliar no entendimento das principais áreas dos recursos humanos: como recrutamento e seleção, treinamento e etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Projeto 3 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="workshops" style="animation-delay: 0.2s;">
+                <div class="relative h-64">
+                    <img src="img/WhatsApp Image 2025-10-02 at 20.59.34.jpeg" alt="Workshop" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2"> Workshop e Roda de conversa</h3>
+                        <p class="text-gray-200 mb-4">A roda de conversa e o workshop têm como objetivo entender como inteligências artificiais estão afetando o ramo profissional,especialmente a área administrativa</p>
+                        <div class="flex space-x-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Workshops e rodas de conversas: Etapas desenvolvidas para compreensão do assunto de inteligência artificial</h3>
+                            <p class="text-gray-600">Workshop e rodas de conversas com os temas: Impactos da inteligência artificial nos processos administrativos; Automação nos processos administrativos; Operacionalização dos processos administrativos com o uso da inteligência; Eficiência e Eficácia nos processos administrativos com o uso da inteligência artificial; Ferramentas digitais nos processos administrativos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto 5 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="games" style="animation-delay: 0.4s;">
+                <div class="relative h-64">
+                    <img src="img/caça.PNG" alt="Realidade Virtual" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Jogos E Tecnologias Caça Palavras</h3>
+                        <div class="flex space-x-2">
+                            <a href="https://wordwall.net/pt/resource/86391233/ca%c3%a7a-palavras-de-cargos-e-sal%c3%a1rios" class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Acessar o caça palavras</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Caça Palavras</h3>
+                            <p class="text-gray-600">Caça palavras focado na temática de recrutamento e seleção</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto 6 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-lg bg-white animate-fade-in" data-category="podcast" style="animation-delay: 0.5s;">
+                <div class="relative h-64">
+                    <img src="img/papo.PNG" alt="Podcast" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Podcast</h3>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Podcast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Podcast</h3>
+                            <p class="text-gray-600">Acompanhe o podcast no canal do youtube</p>
+                                <a href="https://www.youtube.com/watch?v=S3mz4s2TyYg" class="text-2xl sm:text-3xl font-bold text-white led-text">
+                                    <i class="fa-brands fa-youtube"></a></i>
+                                <p><a href="https://www.youtube.com/watch?v=S3mz4s2TyYg"class="text-1x1 sm:text-2x1 font-bold text-white led-text">Clique aqui para ver o podcast</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    projects.forEach(project => {
+                        if (filter === project.getAttribute('data-category')) {
+                            project.style.display = 'block';
+                            project.classList.add('animate-fade-in');
+                        } else {
+                            project.style.display = 'none';
+                            project.classList.remove('animate-fade-in');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+  <style>
+        .gallery-container {
+            scroll-snap-type: x mandatory;
+        }
+        .gallery-slide {
+            scroll-snap-align: start;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-6xl w-full bg-white rounded-xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+        <!-- Carrossel de Fotos -->
+        <div class="w-full md:w-2/3 relative overflow-hidden">
+            <div class="gallery-container flex overflow-x-auto snap-x snap-mandatory h-full scroll-smooth" id="gallery">
+                <!-- Slide 1 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2025-08-10 at 13.42.05.jpeg" alt="Podcast" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Podcast</h3>
+                        <p class="text-sm opacity-90">Ep 1: Desafios da IA e da Tecnologia no Mercado de Trabalho: A Visão da Nova Geração</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/Rodas De Conversa.jpeg" alt="Rodas de conversas" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Rodas de conversa</h3>
+                        <p class="text-sm opacity-90">Apresentação da roda de conversa em sala de aula</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2025-10-02 at 20.59.34.jpeg" alt="Workshop" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Workshop</h3>
+                        <p class="text-sm opacity-90">Foram realizadas apresentações com 3 equipes da turma com os seguintes temas: 1. Gemini, Alexa e Linkedin; 2. Copilot,Google e Outlook; 3. Siri,Chatbot e Windows</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2025-10-04 at 12.35.59.jpeg" alt="Visitas" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Visitas</h3>
+                        <p class="text-sm opacity-90">Visitas técnicas feitas pela turma técnico em administração</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 6 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/turma (2).PNG" alt="Deserto" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Ações Da Turma</h3>
+                        <p class="text-sm opacity-90">Acompanhe ações e projetos que a turma desenvolveu no decorrer do curso.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 7 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/israel e michele.png" alt="Cachoeira" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Instrutores e convidados</h3>
+                        <p class="text-sm opacity-90">Acompanhe a galeria de instrutores e convidados da turma</p>
+                    </div>
+                </div>
+                  <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2025-10-28 at 22.13.49.jpeg" alt="Cachoeira" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Patrocinadores Oficiais Do Projeto</h3>
+                        <p class="text-sm opacity-90">Conheça os patrocinadores oficiais do projeto</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/image.webp" alt="Documentario" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Documentário</h3>
+                        <p class="text-sm opacity-90">Acompanhe aos bastidores do documentário da turma</p>
+                    </div>
+                </div>
+                 <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2026-02-27 at 13.32.46.jpeg" alt="Documentario" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Formatec</h3>
+                        <p class="text-sm opacity-90">Acompanhe um pouco da formatura</p>
+                    </div>
+                </div>
+                 <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2026-02-28 at 11.35.00.jpeg" alt="Documentario" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Bahia Connect 2025</h3>
+                        <p class="text-sm opacity-90">Acompanhe um pouco de como foi o evento organizado pelo senac bahia</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 8 -->
+                <div class="gallery-slide flex-shrink-0 w-full h-full relative">
+                    <img src="img/WhatsApp Image 2025-12-03 at 14.16.43.jpeg" alt="boas vindas" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Dia Do Projeto Integrador</h3>
+                        <p class="text-sm opacity-90">Acompanhe o dia do projeto integrador desenvolvido pela turma técnico em administração 2024.26.296</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles do Carrossel -->
+            <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white rounded-full p-2 backdrop-blur-sm transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white rounded-full p-2 backdrop-blur-sm transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            
+            <!-- Indicadores -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="0"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="1"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="2"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="3"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="4"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="5"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="6"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="7"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="8"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="9"></button>
+                <button class="indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="10"></button>
+
+            </div>
+        </div>
+        
+        <!-- Área de Texto -->
+        <div class="w-full md:w-1/3 p-6 flex flex-col justify-center fade-in" id="textContent">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Podcast</h2>
+            <p class="text-gray-600 mb-4">O Podcast do projeto mentores da inovação nasceu da necessidade de entender como a inteligência artificial está mudando o mercado de trabalho e o ramo da admistração</p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 22V12h6v10" />
+                </svg>
+                <span>Galeria de Fotos Interativa</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.getElementById('gallery');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            const textContent = document.getElementById('textContent');
+            
+            const slideCount = document.querySelectorAll('.gallery-slide').length;
+            let currentIndex = 0;
+            
+            // Textos correspondentes para cada slide
+            const slideTexts = [
+                {
+                    title: "Podcast",
+                    paragraphs: [
+                        "O Podcast do projeto Mentores da Inovação nasceu com a necessidade de compreender como a inteligência artificial está mudando o mercado de trabalho e o ramo da Administração.",
+                    ]
+                },
+                {
+                    title: "A roda de conversa",
+                    paragraphs: [
+                        "Confira a roda de conversa do projeto em que o principal tema foi: Como a Inteligência Artificial está mudando o ambiente de trabalho.",
+                    ]
+                },
+                {
+                    title: "Workshop",
+                    paragraphs: [
+                        "Confira o Workshop interativo, que teve o objetivo de capacitar os participantes a identificar, repensar e automatizar processos administrativos utilizando ferramentas de inteligência artificial.",
+                    ]
+                },
+                {
+                    title: "Visitas Técnicas",
+                    paragraphs: [
+                        "Acompanhe a visita técnica que a turma realizou ao CRA BA (Conselho Regional de Administração Bahia).",
+                       
+                    ]
+                },
+                {
+                    title: "Ações",
+                    paragraphs: [
+                        "Confira uma foto do mês de abril azul para conscientização do autismo, onde a turma elaborou uma cartilha informativa do tema",
+                    ]
+                },
+                {
+                    title: "Instrutores e convidados",
+                    paragraphs: [
+                        "Venha conhecer um pouco dos nossos convidados! Participação especial dos instrutores Israel Morais e Michelle Ody na roda de conversa do projeto Mentores da Inovação."
+                    ]
+                },
+                {
+                    title: "Patrocinadores Oficiais",
+                    paragraphs: [
+                        "Agradecemos aos patrocinadores oficiais pelo apoio essencial ao nosso Projeto Integrador!💪✨.",
+                       
+                    ]
+                },
+                {
+                    title: "Documentário",
+                    paragraphs: [
+                        "Acompanhe os bastidores do documentário do projeto! Nossa turma entrevistou instrutores e alunos do Senac que fizeram parte da nossa trajetória.",        
+                    ]
+                },
+                {
+                    title: "Formatec 2025",
+                    paragraphs: [
+                        "Acompanhe um pouco da formatura técnica da turma(formatec)"
+                    ]
+                },
+                {
+                    title: "Bahia Connect 2025",
+                    paragraphs: [
+                        "Acompanhe o bahia connect um evento organizado pelo senac bahia com o intuito de mostrar inovações tecnológicas no estado da bahia"
+                    ]
+                },
+                {
+                    title: "Dia Do Projeto Integrador Da Turma Técnico Em Administração 2024.26.296",
+                    paragraphs: [
+                        "Acompanhe um pouco do projeto integrador desenvolvido pela turma técnico em administração 2024.26.296 com o intuito de apresentar sobre o projeto e o que tinhamos aprendido durante o percurso do curso"
+                    ]
+                },
+            ];
+            
+            // Atualiza o conteúdo de texto
+            function updateTextContent(index) {
+                textContent.classList.remove('fade-in');
+                void textContent.offsetWidth; // Trigger reflow
+                
+                const content = slideTexts[index];
+                textContent.querySelector('h2').textContent = content.title;
+                
+                const paragraphs = textContent.querySelectorAll('p');
+                content.paragraphs.forEach((text, i) => {
+                    if (paragraphs[i]) {
+                        paragraphs[i].textContent = text;
+                    }
+                });
+                
+                textContent.classList.add('fade-in');
+            }
+            
+            // Navegação
+            function goToSlide(index) {
+                currentIndex = (index + slideCount) % slideCount;
+                gallery.scrollTo({
+                    left: gallery.offsetWidth * currentIndex,
+                    behavior: 'smooth'
+                });
+                updateIndicators();
+                updateTextContent(currentIndex);
+            }
+            
+            function updateIndicators() {
+                indicators.forEach((indicator, i) => {
+                    if (i === currentIndex) {
+                        indicator.classList.remove('bg-white/50');
+                        indicator.classList.add('bg-white');
+                        indicator.classList.add('w-4');
+                    } else {
+                        indicator.classList.add('bg-white/50');
+                        indicator.classList.remove('bg-white');
+                        indicator.classList.remove('w-4');
+                    }
+                });
+            }
+            
+            // Event Listeners
+            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(parseInt(indicator.getAttribute('data-index')));
+                });
+            });
+            
+            // Controle por teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    goToSlide(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    goToSlide(currentIndex + 1);
+                }
+            });
+            
+            // Atualiza o índice quando o usuário faz scroll manual
+            gallery.addEventListener('scroll', () => {
+                const newIndex = Math.round(gallery.scrollLeft / gallery.offsetWidth);
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateIndicators();
+                    updateTextContent(currentIndex);
+                }
+            });
+            
+            // Inicialização
+            updateIndicators();
+        });
+    </script>
+   
+    <!-- CTA Section -->
+    <section class="py-16 bg-indigo-600 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Conecte-se com nossa turma e venha fazer parte do nosso projeto
+        </p>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Conheça nosso instagram e nosso canal no youtube
+        </p>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Caso fique com alguma dúvida do projeto fique a vontade para falar com a central de dúvidas do projeto é só clicar no ícone abaixo do chatbot genio
+        </p>
+       <p class="text-xl mb-8 max-w-2xl mx-auto"> A turma agradece a colaboração de todos os colaboradores, instrutores e todos os demais para a elaboração final do projeto</p>
+        <div class="mb-4">
+            <a href="https://www.instagram.com/ge.tecadm/" class="text-2xl sm:text-3xl font-bold text-white led-text mr-4">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@Ge.tecadm" class="text-2xl sm:text-3xl font-bold text-white led-text">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        
+        <div class="mt-4">
+            <a href="https://mentor-ia-copy-c5b8d9be.base44.app/" class="inline-block">
+                <img src="img/ChatGPT_Image_28_de_out._de_2025__23_59_40-removebg-preview 1 (1).png" alt="Cachoeira" class="inline-block">
+            </a>
+        </div>
+        
+        <div class="flex space-x-4 mt-6">
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <img src="img/neon_1-removebg-preview.png" alt="Mentores" class="h-20 mb-4 mx-auto md:mx-0"><p>&copy; 2025 Mentores da Inovação. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('bg-indigo-600', 'w-4'));
+                indicators.forEach(indicator => indicator.classList.add('bg-indigo-300', 'w-3'));
+                
+                carouselItems[index].classList.add('active');
+                indicators[index].classList.remove('bg-indigo-300', 'w-3');
+                indicators[index].classList.add('bg-indigo-600', 'w-4');
+                currentIndex = index;
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Auto-rotate carousel
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // FAQ toggle functionality
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script> 
+    
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            .floating {
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            .chat-container {
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            
+            .message-entering {
+                animation: messageEnter 0.3s ease-out;
+            }
+            
+            @keyframes messageEnter {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .typing-indicator::after {
+                content: '...';
+                position: absolute;
+                animation: typing 1.5s infinite;
+            }
+            
+            @keyframes typing {
+                0% { content: '.'; }
+                33% { content: '..'; }
+                66% { content: '...'; }
+            }
+            
+            .pulse-ring {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 9999px;
+                border: 2px solid rgba(79, 70, 229, 0.7);
+                animation: pulse 2s infinite;
+            }
+            
+            @keyframes pulse {
+                0% {
+                    transform: scale(0.9);
+                    opacity: 1;
+                }
+                70% {
+                    transform: scale(1.3);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(0.9);
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+   
+    
+        <!-- Chat Widget -->
+        <div id="chatWidget" class="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white shadow-xl cursor-pointer z-50 transition-all duration-300 hover:shadow-2xl hover:scale-110">
+            <i class="fas fa-comment-dots text-2xl"></i>
+            <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs animate-pulse">1</span>
+        </div>
+    
+        <!-- Chat Container -->
+        <div id="chatContainer" class="fixed bottom-24 right-8 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 opacity-0 invisible transition-all duration-300 transform translate-y-2">
+            <div class="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 rounded-t-xl flex items-center">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                    <img src="img/ChatGPT Image 23 de jul. de 2025, 01_08_56 1.png" alt="robozinho">
+                </div>
+                <h3 class="text-white font-medium">Chatbot Genio</h3>
+                <div class="ml-auto flex space-x-3">
+                    <button class="text-white/80 hover:text-white">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button id="closeChatBtn" class="text-white/80 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4 h-96 overflow-y-auto bg-gray-50" id="chatMessages">
+                <div class="flex mb-4">
+                    <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-xs message-entering">
+                        <p class="text-gray-700">Olá! Seja bem vindo(a) sou o chatbot interativo GENIO (Gestão Estratégica de Novas Ideias e Oportunidades), do projeto integrador dos mentores da inovação, e estou aqui para te mostrar todas as competências que a turma técnico em administração 2024.26.296 adquiriu no decorrer do curso. Para que isso seja possível, o usuário deve me fazer perguntas relacionadas a nossos temas, para que assim possa ser mostrado as competências que a turma adquiriu ao decorrer do curso combinado?😉</p>
+                       <p style="background-color: #fff3cd; 
+                        color: #856404; 
+                        border: 1px solid #ffeeba; 
+                        padding: 10px; 
+                        border-radius: 6px; 
+                        font-family: Arial, sans-serif;">
+  ⚠️ <strong>Aviso importante:</strong> é aconselhável que leia as instruções do chatbot e veja nossas especialidades para que assim possa usar o chat de maneira adequada.
+</p>
+                </div>
+                </div>
+            </div>
+            <div class="p-3 border-t border-gray-200 bg-white">
+                <div class="relative">
+                    <input type="text" 
+                           id="chatInput" 
+                           placeholder="Digite sua mensagem..." 
+                           class="w-full pl-4 pr-12 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <button id="sendMessageBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:from-purple-600 hover:to-indigo-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+      <!-- Chatbot Script --> 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const chatWidget = document.getElementById('chatWidget');
+    const chatContainer = document.getElementById('chatContainer');
+    const closeChatBtn = document.getElementById('closeChatBtn');
+    const openChatBtn = document.getElementById('openChatBtn');
+    const sendMessageBtn = document.getElementById('sendMessageBtn');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+
+    let isChatOpen = false;
+
+    // Toggle chat visibility
+    function toggleChat() {
+        isChatOpen = !isChatOpen;
+
+        if (isChatOpen) {
+            chatContainer.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            chatContainer.classList.add('opacity-100', 'visible', 'translate-y-0');
+            chatWidget.querySelector('span').classList.add('hidden');
+        } else {
+            chatContainer.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            chatContainer.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        }
+    }
+
+    // Open chat from main CTA button
+    openChatBtn.addEventListener('click', function() {
+        if (!isChatOpen) {
+            toggleChat();
+        }
+    });
+
+    // Toggle chat with widget
+    chatWidget.addEventListener('click', toggleChat);
+
+    // Close chat with close button
+    closeChatBtn.addEventListener('click', toggleChat);
+
+    // Send message function
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message === '') return;
+
+        addMessage(message, 'user');
+        chatInput.value = '';
+
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'flex mb-4 typing-indicator';
+        typingIndicator.innerHTML = `
+            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-xs">
+                <p class="text-gray-700">Digitando...</p>
+            </div>
+        `;
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        setTimeout(() => {
+            if (typingIndicator.parentNode) {
+                chatMessages.removeChild(typingIndicator);
+            }
+
+            const response = generateAIResponse(message);
+            addMessage(response, 'ai');
+        }, 1000 + Math.random() * 2000);
+    }
+
+    function addMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `flex mb-4 message-entering ${sender === 'user' ? 'justify-end' : ''}`;
+
+        messageDiv.innerHTML = `
+            <div class="${sender === 'user' ? 'bg-purple-500 text-white rounded-tr-none' : 'bg-white text-gray-700 rounded-tl-none'} p-3 rounded-lg shadow-sm max-w-xs">
+                <p>${message}</p>
+            </div>
+        `;
+
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function generateAIResponse(message) {
+        const lowerMessage = message.toLowerCase().trim();
+
+        // Conversas gerais
+        if (lowerMessage.includes('olá') || lowerMessage.includes('oi') || lowerMessage.includes('ola')) {
+            return "Olá! Seja bem vindo(a) sou o chatbot GENIO (Gestão Estratégica de Novas Ideias e Oportunidades)";
+        } else if (lowerMessage.includes('combinado')||lowerMessage.includes('fechado')||lowerMessage.includes('certo')) {
+            return "Certo! Que bom que você entendeu a proposta do projeto😉. Agora, é muito importante que reserve alguns minutos para ler as instruções do chatbot. Quando terminar digite ok para prosseguir";
+        } else if (lowerMessage.includes('como funciona o projeto')||lowerMessage.includes('sobre o projeto')) {
+            return "Nosso projeto integrador tem como objetivo ajudar aos profissionais do ramo administrativo.";
+        } else if (lowerMessage.includes('ok')) {
+            return "Ótimo 😉, agora você pode digitar: uc1 á uc17, e eu te darei um resumo do assunto e de como a inteligência artificial está afetando essas áreas:";
+        } else if (lowerMessage.includes('tchau') || lowerMessage.includes('adeus') || lowerMessage.includes('encerrar')) {
+            return "Até logo! Se precisar de mais ajuda, estarei aqui.";
+        } else if (lowerMessage.includes('obrigado') || lowerMessage.includes('obrigada')) {
+            return "De nada! Estou aqui para ajudar.";
+        } 
+        
+        // ---------------- UC1 a UC17---------------- // 
+         else if (/\buc1\b/.test(lowerMessage)) {
+            return "📘 UC1 - Auxiliar a elaboração, implementação e acompanhamento do planejamento estratégico das organizações | Resumo: Elaboração, implementação e acompanhamento do planejamento estratégico. 🤖 IA: Analisa cenários e prevê tendências de mercado.";
+        } else if (/\buc2\b/.test(lowerMessage)) {
+            return "📘 UC2 -Elaborar, organizar e controlar documentos da organização | Resumo: Identificação, mapeamento e melhoria de processos. 🤖 IA: Automatiza fluxos e identifica gargalos.";
+        } else if (/\buc3\b/.test(lowerMessage)) {
+            return "📘 UC3 - Auxiliar a estruturação e operacionalização de projetos | Resumo:ajudar na definição de objetivos, prazos, recursos necessários, acompanhamento das tarefas e garantia de que tudo ocorra conforme o plano. 🤖 IA: Ferramentas com IA ajudam a planejar e monitorar projetos, prever riscos, distribuir tarefas e acompanhar prazos com maior precisão.";
+        } else if (/\buc4\b/.test(lowerMessage)) {
+            return "📘 UC4 - Auxiliar a execução dos procedimentos de recrutamento, seleção e integração de pessoas | Resumo: Liderança, motivação e desenvolvimento de equipes. 🤖 IA: Melhora o recrutamento e análise de perfis.";
+        } else if (/\buc5\b/.test(lowerMessage)) {
+            return "📘 UC5 - Apoiar e executar ações pertinentes a desenvolvimento de pessoas, retenção, avaliação de desempenho e elaboração de planos de cargos e salário| Resumo: contribuir para o crescimento profissional dos colaboradores, atuando em processos de treinamento, retenção de talentos, avaliação de desempenho e na elaboração de planos de cargos e salários, visando o engajamento, a motivação e a valorização dos funcionários dentro da organização.🤖 IA:Plataformas com IA identificam necessidades de treinamento, sugerem cursos personalizados e monitoram desempenho em tempo real.";
+        } else if (/\buc6\b/.test(lowerMessage)) {
+            return "📘 UC6 - Atuar na organização e execução de ações relacionadas à qualidade de vida, saúde e segurança nos ambientes de trabalho.| Resumo: promover o bem-estar dos colaboradores, garantindo ambientes de trabalho seguros, saudáveis e equilibrados 🤖 IA: Sensores com IA monitoram condições de trabalho e identificam riscos antes que se tornem problemas reais.";
+        } else if (/\buc7\b/.test(lowerMessage)) {
+            return "📘 UC7 - Apoiar e executar ações referentes às rotinas de admissão e demissão de colaboradores| Resumo: realizar e acompanhar os processos de entrada e saída de funcionários, incluindo documentação, registros, integrações e desligamentos. 🤖 IA: Analisa contratos e apoia decisões jurídicas.";
+        } else if (/\buc8\b/.test(lowerMessage)) {
+            return "📘 UC8 - Auxiliar a elaboração da folha de pagamento | Resumo: apoiar no cálculo e conferência dos salários, benefícios, descontos e encargos trabalhistas. 🤖 IA: automatiza cálculos e garante conformidade com legislações.";
+        } else if (/\buc9\b/.test(lowerMessage)) {
+            return "📘 UC9 - Auxiliar a execução das ações pertinentes aos processos de gestão de materiais e patrimônio em organizações | Resumo: Gestão de fluxo de materiais e informações. 🤖 IA: Otimiza rotas e prevê demanda.";
+        } else if (/\buc10\b/.test(lowerMessage)) {
+            return "📘 UC10 - Auxiliar a execução de atividades relacionadas às operações logísticas em organizações | Resumo:apoiar o controle, e execução do fluxo de materiais e produtos,desde o recebimento até a entrega. 🤖 IA:Roteirização otimizada, previsão de demanda, controle de entregas.";
+        } else if (/\buc11\b/.test(lowerMessage)) {
+            return "📘 UC11 - Auxiliar a execução das ações pertinentes aos processos financeiros em organizações| Resumo: apoiar o controle de receitas, despesas, pagamentos e recebimentos. 🤖 IA: identifica padrões de gastos, prevê fluxo de caixa, automatiza pagamentos e detecta fraudes com alta precisão.";
+        } else if (/\buc12\b/.test(lowerMessage)) {
+            return "📘 UC12 - Auxiliar as operações pertinentes às atividades da controladoria nas organizações| Resumo:apoiar o monitoramento e análise das informações contábeis e financeiras, contribuindo para o controle orçamentário, tomada de decisões e desempenho econômico da organização. 🤖 IA: elaborar simulações de cenários financeiros.";
+        } else if (/\buc13\b/.test(lowerMessage)) {
+            return "📘 UC13 - Auxiliar o planejamento, desenvolvimento e a aplicação do composto de marketing das organizações | Resumo: apoiar a criação e execução de estratégias de produto, preço, praça e promoção, visando divulgar a marca 🤖 IA: testa anúncios e sugere estratégias com base em dados reais.";
+        } else if (/\buc14\b/.test(lowerMessage)) {
+            return "📘 UC14 - Executar atividades de apoio administrativo em processos comerciais| Resumo:auxiliar a organização e controle de documentos, pedidos, atendimento a clientes e rotinas internas. 🤖 IA: Automatiza o atendimento ao cliente (chatbots), recomenda produtos e otimiza o funil de vendas com base em análises comportamentais.";
+        } else if (/\buc15\b/.test(lowerMessage)) {
+            return "📘 UC15 - Apoiar a operacionalização de ações de comércio exterior | Resumo:auxiliar os processos de importação e exportação, incluindo documentação, logística e conformidade legal. 🤖 IA:auxilia na análise de mercados internacionais, simula cenários cambiais e automatiza documentações de exportação/importação.";
+        } else if (/\buc16\b/.test(lowerMessage)) {
+            return "📘 UC16 - Auxiliar o planejamento e a execução de melhorias dos processos organizacionais | Resumo: apoiar na análise, otimização e implementação de mudanças para tornar os processos internos mais eficientes. 🤖 IA: monitoram a eficiência operacional em tempo real.";
+        } else if (/\buc17\b/.test(lowerMessage)) {
+            return "📘 UC17- Projeto Integrador Do Senac | Resumo: O Projeto Integrador consiste, basicamente, em reunir tudo o que a turma aprendeu durante o curso em um único projeto, que pode ser apresentado das mais diversas maneiras criativas possíveis. 🤖 IA: No Projeto Integrador da turma 26.296, com a ajuda da IA, foram elaboradas maneiras de facilitar o acesso as informações administrativas. E além disso, com ajuda da IA foram desenvolvidas possíveis soluções para diferentes problemas administrativos.";
+        }      
+        // Caso não entenda
+        else {
+            return "Por favor, leia com atenção e verifique se entendeu sobre o que o chatbot foi feito para fazer 😁";
+        }
+    }
+
+    sendMessageBtn.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    setTimeout(() => {
+        chatWidget.querySelector('span').classList.remove('hidden');
+    }, 3000);
+});
+</script>
+
+    </body>
+    </html>
+</body>
